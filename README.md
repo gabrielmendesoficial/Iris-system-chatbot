@@ -1,5 +1,3 @@
-import { Highlight } from 'components/Highlight'
-
 # 🌸 Classificador de Espécies da Flor Íris com FastAPI e Random Forest
 
 Este projeto utiliza o framework **FastAPI** para disponibilizar uma API que prevê a espécie de uma flor íris com base em suas características morfológicas. O modelo de machine learning foi treinado com **Random Forest** usando o famoso dataset **Iris**, feito enquanto para a minha Sprint 3 enquanto estudava na FIAP.
