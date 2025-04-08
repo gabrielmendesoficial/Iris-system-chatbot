@@ -57,7 +57,7 @@ dump(model, 'archive_model_traning.joblib')
   "petal_width": 0.2
 }
 `}
-```bash
+```
 
 ### 📤 Resposta esperada:
 
