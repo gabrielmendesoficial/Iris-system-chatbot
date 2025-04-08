@@ -23,7 +23,7 @@ O projeto é dividido em duas partes:
 - **Treinamento** com o algoritmo `RandomForestClassifier`
 - **Exportação do modelo** treinado usando `joblib`
 
-<Highlight language="python">
+```python
 {`
 model = RandomForestClassifier()
 data = pd.read_csv('Iris.csv')
@@ -35,7 +35,7 @@ X_ach_traning, X_testing, y_ach_traning, y_testing = train_test_split(X_data, y_
 model.fit(X_ach_traning, y_ach_traning)
 dump(model, 'archive_model_traning.joblib')
 `}
-</Highlight>
+```
 
 ---
 
@@ -48,7 +48,7 @@ dump(model, 'archive_model_traning.joblib')
 
 ### 🔄 Estrutura esperada no corpo da requisição:
 
-<Highlight language="json">
+```json
 {`
 {
   "sepal_length": 5.1,
@@ -57,21 +57,21 @@ dump(model, 'archive_model_traning.joblib')
   "petal_width": 0.2
 }
 `}
-</Highlight>
+```bash
 
 ### 📤 Resposta esperada:
 
-<Highlight language="json">
+```json
 {`
 {
   "Preview do POST": "Iris-setosa"
 }
 `}
-</Highlight>
+```
 
 ### 🧩 Código do Servidor FastAPI
 
-<Highlight language="python">
+```python
 {`
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -92,7 +92,7 @@ def arch_preview(data: ArchData):
     arch_preview = model.predict(arch_data)
     return {"Preview do POST": arch_preview[0]}
 `}
-</Highlight>
+```
 
 > **Atenção:** no código original havia um erro no uso da função `preview()`, o correto é `predict()`.
 
